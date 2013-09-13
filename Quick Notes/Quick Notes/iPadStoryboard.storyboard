@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="ZFJ-7k-qEA">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--Note Detail View Controller i Pad-->
+        <scene sceneID="QPz-g2-mpa">
+            <objects>
+                <viewController id="8dA-uC-JQD" customClass="RHNoteDetailViewController_iPad" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1A8-SU-JeI">
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="AP7-fg-H1H">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="647" id="eM8-dv-Nv0"/>
+                                    <constraint firstAttribute="height" constant="634" id="tMU-iR-5pM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sri-uh-7KX">
+                                <items>
+                                    <navigationItem id="bNm-pV-pEx"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Sri-uh-7KX" firstAttribute="leading" secondItem="1A8-SU-JeI" secondAttribute="leading" type="default" id="B8I-88-qIt"/>
+                            <constraint firstItem="Sri-uh-7KX" firstAttribute="top" secondItem="1A8-SU-JeI" secondAttribute="top" type="default" id="NFH-rv-O9k"/>
+                            <constraint firstItem="AP7-fg-H1H" firstAttribute="centerY" secondItem="1A8-SU-JeI" secondAttribute="centerY" type="default" id="VGJ-jX-Wum"/>
+                            <constraint firstItem="Sri-uh-7KX" firstAttribute="trailing" secondItem="1A8-SU-JeI" secondAttribute="trailing" type="default" id="k7z-rz-NRU"/>
+                            <constraint firstItem="Sri-uh-7KX" firstAttribute="centerX" secondItem="AP7-fg-H1H" secondAttribute="centerX" type="default" id="o2e-k6-otS"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="navBar" destination="Sri-uh-7KX" id="9aK-Va-aHg"/>
+                        <outlet property="noteTextView" destination="AP7-fg-H1H" id="vUO-Rd-iAM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tm2-5z-sZd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="217" y="168"/>
+        </scene>
+        <!--Notes View Controller i Pad - Notes-->
+        <scene sceneID="4Ic-jN-Guk">
+            <objects>
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="q0N-nx-JvN" customClass="RHNotesViewController_iPad" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="8ca-m8-ZrW">
+                        <rect key="frame" x="0.0" y="64" width="320" height="788"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NoteCell" id="I53-Qk-r5A">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="q0N-nx-JvN" id="WP1-Ug-XX1"/>
+                            <outlet property="delegate" destination="q0N-nx-JvN" id="UPL-PZ-HD5"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Notes" id="UFe-j2-7g6">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="LT4-5l-QIy">
+                            <connections>
+                                <action selector="pressedAdd:" destination="q0N-nx-JvN" id="HAC-vB-joQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OWJ-dA-yfx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="751" y="-769"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4zc-WO-94D">
+            <objects>
+                <navigationController id="exV-SY-msf" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="qyI-YA-FWA">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="q0N-nx-JvN" kind="relationship" relationship="rootViewController" id="J38-yy-mIP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s7g-ds-pYw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="217" y="-769"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="3nu-ui-kXw">
+            <objects>
+                <splitViewController id="ZFJ-7k-qEA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <connections>
+                        <segue destination="exV-SY-msf" kind="relationship" relationship="masterViewController" id="VXr-EN-Zvg"/>
+                        <segue destination="8dA-uC-JQD" kind="relationship" relationship="detailViewController" id="NzR-bJ-iGl"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wuQ-PS-f8y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-765" y="-300"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="RHNoteDetailViewController_iPad" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RHNoteDetailViewController_iPad.h"/>
+            <relationships>
+                <relationship kind="outlet" name="navBar" candidateClass="UINavigationBar"/>
+                <relationship kind="outlet" name="noteTextView" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="RHNotesViewController_iPad" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RHNotesViewController_iPad.h"/>
+            <relationships>
+                <relationship kind="action" name="pressedAdd:"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
