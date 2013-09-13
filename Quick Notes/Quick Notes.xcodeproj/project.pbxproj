@@ -96,17 +96,9 @@
 			children = (
 				FD2BE98317E2A7EB00E9C503 /* RHAppDelegate.h */,
 				FD2BE98417E2A7EB00E9C503 /* RHAppDelegate.m */,
+				FD9C149A17E2C189003174B5 /* iPhone */,
+				FD9C149B17E2C19E003174B5 /* iPad */,
 				FD2BE97B17E2A7EB00E9C503 /* Supporting Files */,
-				FD2BE99117E2A80200E9C503 /* iPhoneStoryboard.storyboard */,
-				FD2BE99317E2A82B00E9C503 /* RHNotesViewController.h */,
-				FD2BE99417E2A82B00E9C503 /* RHNotesViewController.m */,
-				FD2BE99617E2AE9000E9C503 /* RHNoteDetailViewController.h */,
-				FD2BE99717E2AE9000E9C503 /* RHNoteDetailViewController.m */,
-				FD59D43E17E2B2B800103565 /* iPadStoryboard.storyboard */,
-				FD59D44017E2B3DD00103565 /* RHNoteDetailViewController_iPad.h */,
-				FD59D44117E2B3DD00103565 /* RHNoteDetailViewController_iPad.m */,
-				FD59D44317E2B40300103565 /* RHNotesViewController_iPad.h */,
-				FD59D44417E2B40300103565 /* RHNotesViewController_iPad.m */,
 			);
 			path = "Quick Notes";
 			sourceTree = "<group>";
@@ -123,6 +115,30 @@
 				FD2BE98A17E2A7EB00E9C503 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FD9C149A17E2C189003174B5 /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				FD2BE99117E2A80200E9C503 /* iPhoneStoryboard.storyboard */,
+				FD2BE99317E2A82B00E9C503 /* RHNotesViewController.h */,
+				FD2BE99417E2A82B00E9C503 /* RHNotesViewController.m */,
+				FD2BE99617E2AE9000E9C503 /* RHNoteDetailViewController.h */,
+				FD2BE99717E2AE9000E9C503 /* RHNoteDetailViewController.m */,
+			);
+			name = iPhone;
+			sourceTree = "<group>";
+		};
+		FD9C149B17E2C19E003174B5 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				FD59D43E17E2B2B800103565 /* iPadStoryboard.storyboard */,
+				FD59D44017E2B3DD00103565 /* RHNoteDetailViewController_iPad.h */,
+				FD59D44117E2B3DD00103565 /* RHNoteDetailViewController_iPad.m */,
+				FD59D44317E2B40300103565 /* RHNotesViewController_iPad.h */,
+				FD59D44417E2B40300103565 /* RHNotesViewController_iPad.m */,
+			);
+			name = iPad;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
