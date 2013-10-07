@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface RHNoteDetailViewController_iPad : UIViewController <UISplitViewControllerDelegate>
+
 @property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
+@property (weak, nonatomic) IBOutlet UITextView *noteTextView;
+@property (nonatomic, strong) NSString* noteText;
 
 @end

@@ -9,6 +9,8 @@
 #import "RHNoteListViewController_iPad.h"
 #import "RHNoteDetailViewController_iPad.h"
 
+#define kNoteCellIdentifier @"NoteCell"
+
 @interface RHNoteListViewController_iPad ()
 
 @end
@@ -27,7 +29,6 @@
     
     
     self.detailViewController = [[self.splitViewController viewControllers] lastObject];
-    
 }
 
 - (NSMutableArray*) notes {
@@ -35,7 +36,7 @@
         _notes = [[NSMutableArray alloc] init];
         
         // Hardcode some data for initial testing.
-        _notes = [ @[@"Bob", @"Dave", @"Steve"] mutableCopy]; // TODO: Delete when done testing
+        _notes = [ @[@"Bob", @"Dave", @"Steve"] mutableCopy];
     }
     return _notes;
 }
@@ -43,26 +44,23 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return self.notes.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kNoteCellIdentifier
+                                                            forIndexPath:indexPath];
     
     // Configure the cell...
+//    cell.detailTextLabel.text = self.notes[indexPath.row];
+//    cell.textLabel.text = [NSString stringWithFormat:@"%d. ", indexPath.row];
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.textLabel.text = self.notes[indexPath.row];
     
     return cell;
 }
@@ -105,6 +103,12 @@
     return YES;
 }
 */
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    self.detailViewController.noteText = self.notes[indexPath.row];
+
+}
 
 /*
 #pragma mark - Navigation

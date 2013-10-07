@@ -12,6 +12,7 @@
 @interface RHNoteListViewController_iPad : UITableViewController
 
 @property (nonatomic, strong) NSMutableArray* notes;
+
 @property (nonatomic, weak) RHNoteDetailViewController_iPad* detailViewController;
 
 @end
