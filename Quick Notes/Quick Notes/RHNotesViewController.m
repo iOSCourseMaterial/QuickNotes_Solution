@@ -77,7 +77,6 @@
     NSString *stringToMove = [self.notesArray objectAtIndex:fromIndexPath.row];
     [self.notesArray removeObjectAtIndex:fromIndexPath.row];
     [self.notesArray insertObject:stringToMove atIndex:toIndexPath.row];
-    
 }
 
 // Override to support conditional rearranging of the table view.

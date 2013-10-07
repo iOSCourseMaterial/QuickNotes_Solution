@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>2E3ACDCD-1043-4B4A-B49B-DFB3A80D79F3</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Quick Notes</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>7CB5C20E-2900-428C-9353-683EE8F2B265</key>
+		<string>https://github.com/iOSCourseMaterial/QuickNotes_Solution.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Quick Notes/Quick Notes.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>7CB5C20E-2900-428C-9353-683EE8F2B265</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/iOSCourseMaterial/QuickNotes_Solution.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>7CB5C20E-2900-428C-9353-683EE8F2B265</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7CB5C20E-2900-428C-9353-683EE8F2B265</string>
+			<key>IDESourceControlWCCName</key>
+			<string>QuickNotes_Solution</string>
+		</dict>
+	</array>
+</dict>
+</plist>
