@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 @class RHNoteDetailViewController_iPad;
 
-@interface RHNoteListViewController_iPad : UITableViewController
+@interface RHNoteListViewController_iPad : UITableViewController <UIAlertViewDelegate>
 
 @property (nonatomic, strong) NSMutableArray* notes;
 
 @property (nonatomic, weak) RHNoteDetailViewController_iPad* detailViewController;
+- (IBAction)pressedAdd:(id)sender;
 
 @end

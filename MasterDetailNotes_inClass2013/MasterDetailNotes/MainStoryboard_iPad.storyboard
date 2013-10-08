@@ -76,7 +76,13 @@
                             <outlet property="delegate" destination="re9-wU-d8c" id="RmB-Eo-1vH"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Notes" id="F3c-Kf-7Bg"/>
+                    <navigationItem key="navigationItem" title="Notes" id="F3c-Kf-7Bg">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="BDs-Lw-Wyn">
+                            <connections>
+                                <action selector="pressedAdd:" destination="re9-wU-d8c" id="Dvi-69-TiR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ExU-aw-S2c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

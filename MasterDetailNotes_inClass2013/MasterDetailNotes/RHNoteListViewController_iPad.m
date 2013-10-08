@@ -21,12 +21,8 @@
 {
     [super viewDidLoad];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     self.detailViewController = [[self.splitViewController viewControllers] lastObject];
 }
@@ -36,11 +32,31 @@
         _notes = [[NSMutableArray alloc] init];
         
         // Hardcode some data for initial testing.
-        _notes = [ @[@"Bob", @"Dave", @"Steve"] mutableCopy];
+        //_notes = [ @[@"Bob", @"Dave", @"Steve"] mutableCopy];
     }
     return _notes;
 }
 
+- (IBAction)pressedAdd:(id)sender {
+
+    
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Add a new note"
+                                                    message:@""
+                                                   delegate:self
+                                          cancelButtonTitle:@"Cancel"
+                                          otherButtonTitles:@"Add note", nil];
+
+    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+
+//    [alert setAlertViewStyle:UIAlertViewStyleLoginAndPasswordInput];
+//    UITextField* topTextField = [alert textFieldAtIndex:0];
+//    UITextField* bottomTextField = [alert textFieldAtIndex:1];
+//    topTextField.placeholder = @"Top text goes here";
+//    bottomTextField.placeholder = @"Bottom text goes here";
+//    [bottomTextField setSecureTextEntry:NO];
+    
+    [alert show];
+}
 
 #pragma mark - Table view data source
 
@@ -65,44 +81,47 @@
     return cell;
 }
 
-/*
+
 // Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
 
-/*
+
 // Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+        [self.notes removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    }
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
 
-/*
+
+
 // Override to support conditional rearranging of the table view.
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the item to be re-orderable.
     return YES;
 }
-*/
+
+// Override to support rearranging the table view.
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+    
+    // Save a temp variable of the one moving
+    NSString* temp = self.notes[fromIndexPath.row];
+    // Delete it
+    [self.notes removeObjectAtIndex:fromIndexPath.row];
+    // Reinsert it
+    [self.notes insertObject:temp atIndex:toIndexPath.row];
+    
+}
+
+
+
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
@@ -122,4 +141,24 @@
 
  */
 
+
+#pragma mark - UIAlertViewDelegate methods
+
+// Called when a button is clicked. The view will be automatically dismissed after this call returns
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+//    NSLog(@"You clicked the button with index %d", buttonIndex);
+    
+    NSString* newNoteText = [[alertView textFieldAtIndex:0] text];
+
+    [self.notes addObject:newNoteText];
+//    [self.tableView reloadData];
+
+    NSIndexPath* newIndexPath = [NSIndexPath indexPathForRow:(self.notes.count - 1) inSection:0];
+    [self.tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+
+}
+
 @end
+
+
+
